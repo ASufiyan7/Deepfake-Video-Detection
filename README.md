@@ -1,60 +1,73 @@
-🎭 AI-Powered Deepfake Video Detection
+# 🎭 AI-Powered Deepfake Video Detection
 
-A deep learning–based system that analyzes videos, extracts frames, and predicts whether the content is real or manipulated using a custom-trained model. Built for accuracy, robustness, and fast inference.
+> **A robust deep learning system to detect manipulated video content.**
 
-✨ Core Features
+![Project Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square)
 
-🎬 Smart Frame Extraction: Extracts key frames for more reliable prediction.
+## 📖 Overview
 
-🧠 Deepfake Classification Model: CNN/Transformer-based architecture trained on real vs fake datasets.
+**AI-Powered Deepfake Video Detection** is a deep learning–based system designed to analyze videos, extract frames, and predict whether the content is **REAL** or **MANIPULATED**.
 
-📊 Confidence Scores: Shows how likely the video is FAKE or REAL.
+Leveraging a custom-trained model (CNN/Transformer architecture), this project focuses on high accuracy, robustness against compression, and fast inference times. It is capable of processing video files, extracting key frames, and aggregating predictions to provide a final confidence score.
 
-🖼️ Visual Frame Output: Displays sample frames used for prediction.
+---
 
-⚡ Optimized Pipeline: Fast preprocessing + embedding extraction.
+## ✨ Core Features
 
-🔍 Optional Explainability (XAI): Simple text-based explanation support.
+* **🎬 Smart Frame Extraction:** Automatically extracts key frames at fixed intervals for reliable prediction, reducing redundancy.
+* **🧠 Deepfake Classification Model:** Advanced architecture (CNN/Transformer) trained on diverse real vs. fake datasets.
+* **📊 Confidence Scores:** Provides a clear probability percentage indicating if the video is FAKE or REAL.
+* **🖼️ Visual Frame Output:** Displays the specific frames analyzed during the inference process.
+* **⚡ Optimized Pipeline:** Engineered for speed with fast preprocessing and efficient embedding extraction.
+* **🔍 Explainability (XAI):** Includes an optional module for simple text-based explanations of the model's decision.
 
-🚀 Tech Stack
-ML + Backend
+---
 
+## 🚀 Tech Stack & Tools
 
-https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+### Machine Learning & Backend
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Scikit Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
+### Utilities & Processing
+![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white)
+![XAI](https://img.shields.io/badge/XAI-Explainability-000000?style=for-the-badge&logoColor=white)
 
-https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
+---
 
+## 🧠 How It Works
 
-https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white
+The system follows a streamlined pipeline to process video data:
 
+1.  **Input:** User uploads a video file (MP4, AVI, etc.) via the API or Interface.
+2.  **Extraction:** The system uses `OpenCV` and `FFmpeg` to extract frames at specific intervals.
+3.  **Preprocessing:** Faces are detected and cropped; frames are normalized for the model.
+4.  **Inference:** The preprocessed frames are passed to the PyTorch model.
+5.  **Aggregation:** The model outputs probabilities for individual frames, which are aggregated (averaged/weighted) to form a final verdict.
+6.  **Output:** The system returns a **REAL** or **FAKE** label along with a confidence score and (optional) XAI explanation.
 
-https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white
+---
 
+## 🛠️ Installation
 
-https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white
+Clone the repository and install the dependencies.
 
+```bash
+# Clone the repo
+git clone [https://github.com/yourusername/deepfake-detection.git](https://github.com/yourusername/deepfake-detection.git)
 
-https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white
+# Navigate to the directory
+cd deepfake-detection
 
-Tools
+# Create a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-
-https://img.shields.io/badge/FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white
-
-
-https://img.shields.io/badge/XAI-000000?style=for-the-badge&logoColor=white
-
-🧠 How It Works
-
-User uploads a video (MP4, AVI, etc.)
-
-Frames are extracted at fixed intervals.
-
-Each frame is preprocessed and passed to the ML model.
-
-The model outputs REAL vs FAKE probabilities.
-
-Multiple frame predictions are aggregated into a final decision.
-
-(Optional) XAI module generates simple explanations.
+# Install dependencies
+pip install -r requirements.txt
