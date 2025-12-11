@@ -10,14 +10,14 @@
 
 **AI-Powered Deepfake Video Detection** is a deep learning–based system designed to analyze videos, extract frames, and predict whether the content is **REAL** or **MANIPULATED**.
 
-Leveraging a custom-trained model (CNN/Transformer architecture), this project focuses on high accuracy, robustness against compression, and fast inference times. It is capable of processing video files, extracting key frames, and aggregating predictions to provide a final confidence score.
+Leveraging a custom-trained model (CNN architecture), this project focuses on high accuracy, robustness against compression, and fast inference times. It is capable of processing video files, extracting key frames, and aggregating predictions to provide a final confidence score.
 
 ---
 
 ## ✨ Core Features
 
 * **🎬 Smart Frame Extraction:** Automatically extracts key frames at fixed intervals for reliable prediction, reducing redundancy.
-* **🧠 Deepfake Classification Model:** Advanced architecture (CNN/Transformer) trained on diverse real vs. fake datasets.
+* **🧠 Deepfake Classification Model:** Advanced architecture (CNN) trained on diverse real vs. fake datasets.
 * **📊 Confidence Scores:** Provides a clear probability percentage indicating if the video is FAKE or REAL.
 * **🖼️ Visual Frame Output:** Displays the specific frames analyzed during the inference process.
 * **⚡ Optimized Pipeline:** Engineered for speed with fast preprocessing and efficient embedding extraction.
@@ -30,13 +30,11 @@ Leveraging a custom-trained model (CNN/Transformer architecture), this project f
 ### Machine Learning & Backend
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Scikit Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
 ### Utilities & Processing
-![FFmpeg](https://img.shields.io/badge/FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white)
 ![XAI](https://img.shields.io/badge/XAI-Explainability-000000?style=for-the-badge&logoColor=white)
 
 ---
@@ -46,7 +44,7 @@ Leveraging a custom-trained model (CNN/Transformer architecture), this project f
 The system follows a streamlined pipeline to process video data:
 
 1.  **Input:** User uploads a video file (MP4, AVI, etc.) via the API or Interface.
-2.  **Extraction:** The system uses `OpenCV` and `FFmpeg` to extract frames at specific intervals.
+2.  **Extraction:** The system uses `MTCNN` to extract frames at specific intervals.
 3.  **Preprocessing:** Faces are detected and cropped; frames are normalized for the model.
 4.  **Inference:** The preprocessed frames are passed to the PyTorch model.
 5.  **Aggregation:** The model outputs probabilities for individual frames, which are aggregated (averaged/weighted) to form a final verdict.
