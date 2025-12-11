@@ -1,0 +1,11 @@
+streamlit
+torch
+torchvision
+facenet-pytorch
+opencv-python
+pandas
+scikit-learn
+matplotlib
+seaborn
+torchinfo
+grad-cam
