@@ -52,20 +52,3 @@ The system follows a streamlined pipeline to process video data:
 
 ---
 
-## 🛠️ Installation
-
-Clone the repository and install the dependencies.
-
-```bash
-# Clone the repo
-git clone [https://github.com/yourusername/deepfake-detection.git](https://github.com/yourusername/deepfake-detection.git)
-
-# Navigate to the directory
-cd deepfake-detection
-
-# Create a virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
-# Install dependencies
-pip install -r requirements.txt
